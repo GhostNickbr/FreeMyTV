@@ -73,6 +73,7 @@ public class HomeActivity extends Activity {
             recreate();   // a new language or city: draw everything again
             return;
         }
+        RemoteKeys.topWindow = HomeActivity.class.getName();   // the action keys belong to us while we're in front
         if (home != null) home.resume();
         Updates.tellOnce(this);   // an update the week's check got ready: said once
     }
@@ -80,6 +81,7 @@ public class HomeActivity extends Activity {
     @Override protected void onPause() {
         resumed = false;
         if (home != null) home.pause();
+        if (HomeActivity.class.getName().equals(RemoteKeys.topWindow)) RemoteKeys.topWindow = null;
         super.onPause();
     }
 
