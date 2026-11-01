@@ -206,6 +206,8 @@
  "Quotes widget": "Kurssiwidget",
  "RECOMMENDATIONS": "SUOSITUKSET",
  "Rain": "Sadetta",
+ "Rain in {hours} h": "Sadetta {hours} h kuluttua",
+ "Rain now": "Sadetta nyt",
  "Recent Apps": "Viimeisimmät sovellukset",
  "Recommended on Trakt": "Suositeltu Traktissa",
  "Remote Buttons": "Kaukosäätimen painikkeet",

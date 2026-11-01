@@ -649,6 +649,9 @@
       el('div', 'cond', card, tr('No weather data right now.')).style.top = '96px';
       return;
     }
+    // The first rain in the hours fetched: "Rain now", or the count down to it (as on Android's home screen).
+    var rain = Data.rainInHours(w);
+    if (rain >= 0) el('div', 'side rain', card, rain === 0 ? tr('Rain now') : trf('Rain in {hours} h', {hours: rain}));
     var now = el('div', 'now', card);
     sym(Data.symbol(w.code, w.isDay), now);
     el('span', 'temp', now, Data.degrees(w.temp));

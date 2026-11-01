@@ -206,6 +206,8 @@
  "Quotes widget": "Kurs-Widget",
  "RECOMMENDATIONS": "EMPFEHLUNGEN",
  "Rain": "Regen",
+ "Rain in {hours} h": "Regen in {hours} Std.",
+ "Rain now": "Regen jetzt",
  "Recent Apps": "Zuletzt verwendet",
  "Recommended on Trakt": "Empfohlen auf Trakt",
  "Remote Buttons": "Fernbedienungstasten",
