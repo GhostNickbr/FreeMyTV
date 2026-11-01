@@ -206,6 +206,8 @@
  "Quotes widget": "Fiyat widget'ı",
  "RECOMMENDATIONS": "ÖNERİLER",
  "Rain": "Yağmur",
+ "Rain in {hours} h": "{hours} saat sonra yağmur",
+ "Rain now": "Şimdi yağmur",
  "Recent Apps": "Son uygulamalar",
  "Recommended on Trakt": "Trakt önerisi",
  "Remote Buttons": "Kumanda Tuşları",

@@ -177,6 +177,22 @@ var Data = (function () {
     return Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5]) - offsetSeconds * 1000;
   }
 
+  /** 0 = raining now, > 0 = hours until the next rain in the hours fetched, -1 = none. */
+  function rainInHours(w) {
+    if (!w) return -1;
+    if (isRain(w.code)) return 0;
+    for (var i = 0; w.hours && i < w.hours.length; i++) {
+      if (!isRain(w.hours[i].code)) continue;
+      return Math.max(1, Math.round((w.hours[i].at - Date.now()) / 3600000));
+    }
+    return -1;
+  }
+
+  /** WMO drizzle, rain, showers and thunderstorms (snow is not rain). */
+  function isRain(code) {
+    return (code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95;
+  }
+
   function parseWeather(o) {
     if (!o || !o.current) return null;
     var off = o.utc_offset_seconds || 0, dl = o.daily, now = Date.now();
@@ -660,6 +676,7 @@ var Data = (function () {
     cityChanged: function () { weather = null; weatherAt = 0; refreshWeather(); changed(); },
     get weather() { return weather; },
     get weatherAt() { return weatherAt; },
+    rainInHours: rainInHours,
     prices: prices,
     changes: changes,
     get pricesAt() { return pricesAt; },
