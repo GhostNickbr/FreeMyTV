@@ -1319,6 +1319,8 @@ public class SettingsActivity extends Activity {
                     Ui.tr("Netflix button"), Ui.tr("Disney+ button"),
                     Ui.tr("Prime Video button"), Ui.tr("YouTube button"),
                     Ui.tr("Crunchyroll button"), Ui.tr("Google Play button"), Ui.tr("SonyLIV button")};
+            if (RemoteKeys.KALLEY) return new String[] {Ui.tr("Netflix button"), Ui.tr("YouTube button"),
+                    Ui.tr("Prime Video button")};
             return new String[] {Ui.tr("Netflix button"), Ui.tr("YouTube button"),
                     Ui.tr("Prime Video button"), Ui.tr("TCL Channel button"), Ui.tr("Settings button")};
         }
@@ -2338,6 +2340,7 @@ public class SettingsActivity extends Activity {
                         : RemoteKeys.FORMOVIE || RemoteKeys.JVC_SKYWORTH ? Ui.tr("The other buttons: the TV itself controls them.")
                         : RemoteKeys.XIAOMI ? Ui.tr("Xiaomi default: the button opens what it always did.")
                         : RemoteKeys.HISENSE ? Ui.tr("Netflix: the TV itself controls that button.")
+                        : RemoteKeys.KALLEY ? Ui.tr("Input, Settings and Profile work on the home screen only.")
                         : RemoteKeys.GOOGLE_STREAMER ? Ui.tr("The other buttons: the TV itself controls them.")
                         : RemoteKeys.supported() ? Ui.tr("Disney and Globoplay: the TV itself controls those buttons.")
                         : Ui.tr("TCL remote buttons: on this TV they work as always."), LIST_X * k + 30 * k, hy + 38 * k, hint);
